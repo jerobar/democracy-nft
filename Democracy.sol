@@ -68,6 +68,11 @@ contract Democracy is Ownable, ERC721 {
     }
 
     function nominateChallenger(address challenger_) external {
+        require(
+            challenger == address(0),
+            "DemocracyNft: Challenger already nominated"
+        );
+
         challenger = challenger_;
 
         // Rig the election!
