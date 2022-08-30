@@ -38,7 +38,7 @@ contract Democracy is Ownable, ERC721 {
         _;
     }
 
-    modifier contractBalanceGreaterThanZero() {
+    modifier contractBalanceIsGreaterThanZero() {
         require(
             address(this).balance > 0,
             "DemocracyNft: Insufficient contract balance"
@@ -76,8 +76,8 @@ contract Democracy is Ownable, ERC721 {
 
     function vote(address nominee)
         external
+        contractBalanceIsGreaterThanZero
         electionNotYetCalled
-        contractBalanceGreaterThanZero
         nomineeIsValid(nominee)
         hodlerNotYetVoted
     {
