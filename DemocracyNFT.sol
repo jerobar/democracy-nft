@@ -95,7 +95,7 @@ contract Democracy is Ownable, ERC721 {
         // Tip hodler for doing their civic duty
         payable(msg.sender).call{value: address(this).balance / 10}("");
 
-        // Once all hodler's have voted, call election
+        // Once all hodlers have voted, call election
         if (votes[incumbent] + votes[challenger] >= TOTAL_SUPPLY_CAP) {
             _callElection();
         }
