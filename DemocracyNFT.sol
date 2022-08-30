@@ -92,7 +92,7 @@ contract Democracy is Ownable, ERC721 {
         votes[nominee] += hodlerNftBalance;
         voted[msg.sender] = true;
 
-        // Tip each hodler for doing their civic duty
+        // Tip hodler for doing their civic duty
         payable(msg.sender).call{value: address(this).balance / 10}("");
 
         // Once all hodler's have voted, call election
