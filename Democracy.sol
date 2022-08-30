@@ -20,7 +20,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
  * Your goal is to drain the contract's entire balance.
  */
 contract Democracy is Ownable, ERC721 {
-    uint256 public PRICE = 1 ether;
+    uint256 public PRICE = 1_000 ether;
     uint256 public TOTAL_SUPPLY_CAP = 10;
 
     address public incumbent;
